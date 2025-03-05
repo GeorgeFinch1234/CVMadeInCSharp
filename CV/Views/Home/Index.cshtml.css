@@ -1,0 +1,17 @@
+﻿body {
+}
+figure{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+img {
+    border-radius: 10px;
+    width: 75vw;
+}
+h2{
+    text-align:center;
+}
+.alignText{
+    text-align:center;
+}

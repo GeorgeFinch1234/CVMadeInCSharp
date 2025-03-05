@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  overflow-x:hidden;
 }
 
 @media (min-width: 768px) {
@@ -12,14 +13,11 @@ html {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+body {
+    padding: 20px;
+    background-color: #d2e1cc;
 }
 
-body {
-  margin-bottom: 60px;
-}
 
 nav{
     position:relative;
@@ -29,24 +27,38 @@ nav{
     z-index:2;
     text-align:end;
 }
-    nav div {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 100vh;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #d2e1cc;
-        opacity:95%;
-        top:0;
-        left:110vw;
-        transition:1s;
-    }
-
-
-
-
-.show{
-    left:0vw;
+nav div {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #5e8d83;
+    opacity: 95%;
+    top: 0;
+    transition: 1s;
+    transform: translateX(110vw);
 }
+
+.show {
+    /*
+        to account for the padding on the body
+    */
+    transform: translateX(-20px);
+}
+h1 {
+font-size:35px;
+}
+h2{
+    font-size:30px;
+   
+}
+p{
+    font-size:25px;
+}
+a{
+    font-size:45px;
+}
+
