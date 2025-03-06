@@ -1,0 +1,32 @@
+﻿body {
+}
+.slide{
+    display:none;
+}
+.carouselAnimation {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+*{
+    text-align:center;
+}
+#section {
+    border: 0px;
+    border-bottom: 5px;
+    border-color: #c2cdbd;
+    border-style: solid;
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+}
