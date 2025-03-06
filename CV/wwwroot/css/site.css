@@ -60,5 +60,11 @@ p{
 }
 a{
     font-size:45px;
+    text-decoration:none;
+    /*
+        temp fix, need to find the file that is causing them to be blue.
+    */
+    color: black !important;
+   
 }
 
