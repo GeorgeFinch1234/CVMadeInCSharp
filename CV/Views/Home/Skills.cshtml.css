@@ -1,0 +1,14 @@
+﻿body {
+}
+section {
+    text-align:center;
+}
+section *{
+    margin:0px;
+}
+section{
+    padding:20px;
+}
+.smallerH1Text{
+    font-size:20px;
+}
