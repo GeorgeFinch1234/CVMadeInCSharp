@@ -4,3 +4,20 @@
 @{
 }
 <h1>Contact</h1>
+<form action="/Home/ContactInput" method="post">
+    <label for="Name" >Name*</label>
+    <input id="Name" name="Name" type="text" maxlength="100" />
+    <label for="Company">Company (Optional)</label>
+    <input id="Company" name="Comapny" type="text" maxlength="100" />
+    <label for="EmailAddress">Email Address*</label>
+    <input id="EmailAddress" name="EmailAddress" type="text" maxlength="100" />
+    <label for="PhoneNumber">Phone Number*</label>
+    <input id="PhoneNumber" name="PhoneNumber" type="text" maxlength="100" />
+    <label for="Subject">Subject*</label>
+    <input id="Subject" Name ="Subject" type="text" maxlength="100" />
+    <label for="Message">Message*</label>
+    <input id="Message" name = "Message" type="text" maxlength="100" />
+    <input type="submit" aria-label="Submit"/>
+    <label id="ErrorMessage">@ViewData["ErrorMessage"]</label>
+
+</form>
