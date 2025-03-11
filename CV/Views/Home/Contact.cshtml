@@ -4,7 +4,10 @@
 @{
 }
 <h1>Contact</h1>
+<p>please use the form below to get in touch</p>
+
 <form action="/Home/ContactInput" method="post">
+    <div id="form">
     <label for="Name" >Name*</label>
     <input id="Name" name="Name" type="text" maxlength="100" />
     <label for="Company">Company (Optional)</label>
@@ -17,7 +20,10 @@
     <input id="Subject" Name ="Subject" type="text" maxlength="100" />
     <label for="Message">Message*</label>
     <input id="Message" name = "Message" type="text" maxlength="100" />
-    <input type="submit" aria-label="Submit"/>
+    </div>
+    <div id="submitBtnContainer">
+     <input type="submit" aria-label="Submit" id="submitBtn"/>
+     </div>
     <label id="ErrorMessage">@ViewData["ErrorMessage"]</label>
-
+    
 </form>
