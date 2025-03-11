@@ -28,6 +28,7 @@ nav{
     text-align:end;
 }
 nav div {
+    z-index:2;
     position: fixed;
     display: flex;
     flex-direction: column;
