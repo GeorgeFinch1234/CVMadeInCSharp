@@ -49,7 +49,7 @@ namespace CV.Controllers
             {
 
             }
-            else if (!(PhoneNumber is int))
+            else if (!(PhoneNumber is String))
             {
                 error = "Phone number is required and must be only numbers";
             }
