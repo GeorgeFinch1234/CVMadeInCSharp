@@ -1,0 +1,31 @@
+﻿
+#form{
+    display:grid;
+    grid-template-columns:100%;
+    
+}
+#Message {
+   height:100px;
+   
+}
+#submitBtn {
+    border-radius: 20px;
+    background-color: #5e8d83;
+    padding-inline:20px;
+}
+#submitBtnContainer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-top:20px;
+}
+label{
+    padding-top:10px;
+}
+label, p{
+    font-size:15px;
+}
+p{
+    margin:0px;
+    max-width:75vw;
+}
