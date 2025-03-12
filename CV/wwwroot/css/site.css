@@ -77,3 +77,37 @@ a{
         background-color: #4b7168;
     }
 
+    @media screen and (min-width: 768px){
+        #menuIcon{
+            display:none;
+        }
+        nav {
+            width: 100vw;
+            background-color: #5e8d83;
+            position:relative;
+            top:-20px;
+            left:-20px;
+            padding:20px;
+            
+        }
+        nav div {
+            position: static;
+            flex-direction: row;
+            width: 100%;
+            height: auto;
+            transform: translateX(0vw);
+            gap: 20px;
+           
+            justify-content:end;
+        }
+        a {
+            background-color: white;
+            border-radius:20px;
+            font-size:25px;
+            height:60px;
+            width:120px;
+            
+        }
+        
+
+    } 
