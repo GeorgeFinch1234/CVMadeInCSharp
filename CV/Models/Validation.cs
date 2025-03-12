@@ -4,7 +4,7 @@ using System;
 namespace CV.Models
 {
   
-    public class Validation
+    public class Validation : IValidation
     {
         // need to double check regex is correct
         String safeString = "^[a-zA-Z0-9@ \\.]*$";
@@ -16,8 +16,12 @@ namespace CV.Models
         public String validateOptionalString(String DataToTest)
         {
             String result = "";
+            //just so it doesnt cause any issues with the other testfrom being null
+            if(DataToTest == null || DataToTest == "")
+            {
 
-            if (DataToTest.Length > 50){
+            }
+            else if (DataToTest.Length > 50){
                 result = "input is to long";
 
             } else if (!Regex.IsMatch(DataToTest, safeString))

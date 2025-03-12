@@ -7,10 +7,12 @@ namespace CV.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IValidation _validation;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IValidation validation)
         {
             _logger = logger;
+            _validation = validation;
         }
 
         public IActionResult Index()
@@ -34,53 +36,13 @@ namespace CV.Controllers
         public IActionResult ContactInput(String Name, String Company, String EmailAddress, String PhoneNumber, String Subject, String Message )
         {
             String error = "";
-            if (!(Name is String))
-            {
-                error = "Name is required";
-            }
-             else if (Name.Length > 15)
-            {
-                error = "Name is to long, max chacrter is 15";
-            }
-            else if (!(EmailAddress is String))
-            {
-                error = "Email is required";
-            } else if (EmailAddress.Length > 70) 
-            {
 
-            }
-            else if (!(PhoneNumber is String))
-            {
-                error = "Phone number is required and must be only numbers";
-            }
-            else if (PhoneNumber.Length < 9)
-            {
-                error = "Phone number is to short";
-            }
-            else if (PhoneNumber.Length > 10 )
-            {
-                error = "Phone number is to long";
-            }
-            else if (!(Subject is String))
-            {
-                error = "Subject is required";
-            }
-            else if (Subject.Length > 50)
-            {
-                error = "Max subject length is 50 chracters";
-            }
-            else  if (!(Message is String))
-            {
-                error = "Message is required";
-            }
-            else if (Message.Length >= 100)
-            {
-                error = "Max message length is 200 charcters";
-            } else if (!(Company is null) && Company.Length > 50)
-            {
-                error = "max input for company is 50 characters";
-            }
-
+            error = _validation.validateManditoryString(Name);
+            error = _validation.validateOptionalString(Company);
+            error = _validation.validateManditoryString(EmailAddress);
+            error = _validation.validatePhoneNumber(PhoneNumber);
+            error = _validation.validateManditoryString(Subject);
+            error = _validation.validateManditoryString(Message);
 
             ViewData["ErrorMessage"] = error;
             return View("Contact");
