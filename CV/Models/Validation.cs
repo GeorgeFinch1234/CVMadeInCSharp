@@ -4,7 +4,7 @@ using System;
 namespace CV.Models
 {
   
-    public class Validation
+    public class Validation : IValidation
     {
         // need to double check regex is correct
         String safeString = "^[a-zA-Z0-9@ \\.]*$";
@@ -16,8 +16,12 @@ namespace CV.Models
         public String validateOptionalString(String DataToTest)
         {
             String result = "";
+            //just so it doesnt cause any issues with the other testfrom being null
+            if(DataToTest == null || DataToTest == "")
+            {
 
-            if (DataToTest.Length > 50){
+            }
+            else if (DataToTest.Length > 50){
                 result = "input is to long";
 
             } else if (!Regex.IsMatch(DataToTest, safeString))
@@ -32,7 +36,7 @@ namespace CV.Models
         {
             String result = "";
             result = validateOptionalString(DataToTest);
-            if(DataToTest.Length <=0)
+            if(DataToTest == null || DataToTest.Length <=0)
             {
                 result = "input is mandioty";
             }
@@ -40,8 +44,11 @@ namespace CV.Models
         }
         public String validatePhoneNumber(String DataToTest) {
             string result = "";
-
-            if (!(DataToTest.Length >= 9 && DataToTest.Length <= 10))
+            //handles null
+            if(DataToTest == null)
+            {
+                result = "input required";
+            } else if (!(DataToTest.Length >= 9 && DataToTest.Length <= 10))
             {
                 result = "must be between 9 and 10 digits.";
             }
