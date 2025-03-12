@@ -37,12 +37,12 @@ namespace CV.Controllers
         {
             String error = "";
 
-            error = _validation.validateManditoryString(Name);
-            error = _validation.validateOptionalString(Company);
-            error = _validation.validateManditoryString(EmailAddress);
-            error = _validation.validatePhoneNumber(PhoneNumber);
-            error = _validation.validateManditoryString(Subject);
-            error = _validation.validateManditoryString(Message);
+            error = _validation.validateManditoryString(Name) + "for name";
+            error = _validation.validateOptionalString(Company) + "for Company";
+            error = _validation.validateManditoryString(EmailAddress) + "for Email";
+            error = _validation.validatePhoneNumber(PhoneNumber) + "for Phone number";
+            error = _validation.validateManditoryString(Subject) + "for subject";
+            error = _validation.validateManditoryString(Message) + "for message";
 
             ViewData["ErrorMessage"] = error;
             return View("Contact");

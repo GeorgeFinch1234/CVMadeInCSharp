@@ -36,7 +36,7 @@ namespace CV.Models
         {
             String result = "";
             result = validateOptionalString(DataToTest);
-            if(DataToTest.Length <=0)
+            if(DataToTest == null || DataToTest.Length <=0)
             {
                 result = "input is mandioty";
             }
@@ -44,8 +44,11 @@ namespace CV.Models
         }
         public String validatePhoneNumber(String DataToTest) {
             string result = "";
-
-            if (!(DataToTest.Length >= 9 && DataToTest.Length <= 10))
+            //handles null
+            if(DataToTest == null)
+            {
+                result = "input required";
+            } else if (!(DataToTest.Length >= 9 && DataToTest.Length <= 10))
             {
                 result = "must be between 9 and 10 digits.";
             }
