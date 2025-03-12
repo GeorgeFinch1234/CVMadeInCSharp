@@ -3,11 +3,7 @@ html {
   overflow-x:hidden;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
+
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -53,11 +49,11 @@ h1 {
 font-size:35px;
 }
 h2{
-    font-size:30px;
+    font-size:20px;
    
 }
 p{
-    font-size:25px;
+    font-size:15px;
 }
 a{
     font-size:45px;
@@ -111,5 +107,15 @@ a{
         h1{
             font-size:60px;
         }
+        h2 {
+            font-size: 30px;
+        }
 
+        p {
+            font-size: 25px;
+        }
+
+        html {
+            font-size: 16px;
+        }
     } 

@@ -5,16 +5,18 @@ section {
 section *{
     margin:0px;
 }
-section{
-    padding:20px;
+section {
+    padding: 10px;
+    border: 0px;
+    border-bottom: 5px;
+    border-color: #c2cdbd;
+    border-style: solid;
 }
-.smallerH1Text{
-    font-size:20px;
-}
+
 @media screen and (min-width: 768px) {
     main {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minMax(100px, 200px));
+        grid-template-columns: repeat(auto-fill, minMax(100px, 220px));
         justify-content: center;
         width:100%;
         
@@ -23,6 +25,11 @@ section{
     div{
         display:flex;
         width:100vw;
+        position:relative;
+        /*
+            to account for the padding on main
+        */
+        left:-20px;
     }
 
     #skillTitle p{
@@ -32,6 +39,23 @@ section{
     h1{
         text-align:left;
     }
-
-
+    section {
+        padding: 20px;
+        border: 0px;
+        border-bottom: 0px;
+       
+    }
+    #skillTitle p{
+font-size:20px;
+    }
+    h2 {
+        height: 72px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        border:0px;
+        border-bottom: 5px;
+        border-color: #c2cdbd;
+        border-style: solid;
+    }
 }
