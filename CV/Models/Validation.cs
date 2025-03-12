@@ -13,7 +13,7 @@ namespace CV.Models
 
         }
 
-        public String validateOptionalString(String DataToTest)
+        public String validateOptionalString(String? DataToTest)
         {
             String result = "";
             //just so it doesnt cause any issues with the other testfrom being null

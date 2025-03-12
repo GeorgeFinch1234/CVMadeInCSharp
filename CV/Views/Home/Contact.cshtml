@@ -9,17 +9,17 @@
 <form action="/Home/ContactInput" method="post">
     <div id="form">
     <label for="Name" >Name*</label>
-    <input id="Name" name="Name" type="text" maxlength="100" />
+    <input id="Name" name="Name" type="text" maxlength="50" required />
     <label for="Company">Company (Optional)</label>
-    <input id="Company" name="Comapny" type="text" maxlength="100" />
+    <input id="Company" name="Company" type="text" maxlength="50" />
     <label for="EmailAddress">Email Address*</label>
-    <input id="EmailAddress" name="EmailAddress" type="text" maxlength="100" />
+        <input id="EmailAddress" name="EmailAddress" type="text" maxlength="50" required />
     <label for="PhoneNumber">Phone Number*</label>
-    <input id="PhoneNumber" name="PhoneNumber" type="text" maxlength="100" />
+        <input id="PhoneNumber" name="PhoneNumber" type="text" maxlength="10" minlength="9" required />
     <label for="Subject">Subject*</label>
-    <input id="Subject" Name ="Subject" type="text" maxlength="100" />
+        <input id="Subject" Name="Subject" type="text" maxlength="50" required />
     <label for="Message">Message*</label>
-    <textarea id="Message" name = "Message" maxlength="100" ></textarea>
+        <textarea id="Message" name="Message" maxlength="50" required></textarea>
     </div>
     <div id="submitBtnContainer">
      <input type="submit" aria-label="Submit" id="submitBtn"/>
