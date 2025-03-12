@@ -8,11 +8,13 @@ namespace CV.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private IValidation _validation;
+        private MessageContext _context;
 
-        public HomeController(ILogger<HomeController> logger, IValidation validation)
+        public HomeController(ILogger<HomeController> logger, IValidation validation, MessageContext context )
         {
             _logger = logger;
             _validation = validation;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -37,12 +39,21 @@ namespace CV.Controllers
         {
             String error = "";
 
-            error = _validation.validateManditoryString(Name) + "for name";
-            error = _validation.validateOptionalString(Company) + "for Company";
-            error = _validation.validateManditoryString(EmailAddress) + "for Email";
-            error = _validation.validatePhoneNumber(PhoneNumber) + "for Phone number";
-            error = _validation.validateManditoryString(Subject) + "for subject";
-            error = _validation.validateManditoryString(Message) + "for message";
+            error = _validation.validateManditoryString(Name);
+            error = _validation.validateOptionalString(Company);
+            error = _validation.validateManditoryString(EmailAddress);
+            error = _validation.validatePhoneNumber(PhoneNumber);
+            error = _validation.validateManditoryString(Subject);
+            error = _validation.validateManditoryString(Message);
+
+            if (error == "")
+            {
+                Message toBeSaved = new Message() { Name = Name, Company = Company, Email = EmailAddress, PhoneNumber = PhoneNumber, Subject = Subject, UserMessage = Message };
+
+
+                _context.Add(toBeSaved);
+                _context.SaveChanges();
+            }
 
             ViewData["ErrorMessage"] = error;
             return View("Contact");
