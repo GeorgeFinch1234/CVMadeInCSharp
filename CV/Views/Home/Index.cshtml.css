@@ -18,3 +18,29 @@ h2{
 h1{
     margin:0;
 }
+
+@media screen and (min-width: 768px) {
+    #indexTitle {
+        background-color: #5e8d83;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        position: relative;
+        top: -21px;
+        left: -21px;
+        padding-bottom: 20px;
+    }
+
+    p {
+        margin: 0px;
+    }
+    #indexContent{
+        display:flex;
+        gap:20px;
+    }
+    img{
+        width:40vw;
+    }
+}
