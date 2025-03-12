@@ -11,3 +11,27 @@ section{
 .smallerH1Text{
     font-size:20px;
 }
+@media screen and (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minMax(100px, 200px));
+        justify-content: center;
+        width:100%;
+        
+    }
+
+    div{
+        display:flex;
+        width:100vw;
+    }
+
+    #skillTitle p{
+        max-width:25vw;
+        text-align:left;
+    }
+    h1{
+        text-align:left;
+    }
+
+
+}
