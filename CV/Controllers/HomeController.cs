@@ -35,18 +35,52 @@ namespace CV.Controllers
         {
             return View();
         }
-        public IActionResult ContactInput(String Name, String Company, String EmailAddress, String PhoneNumber, String Subject, String Message )
+        public IActionResult ContactInput(String Name, String? Company, String EmailAddress, String PhoneNumber, String Subject, String Message )
         {
             String error = "";
+            string checker = "";
 
-            error = _validation.validateManditoryString(Name);
-            error = _validation.validateOptionalString(Company);
-            error = _validation.validateManditoryString(EmailAddress);
-            error = _validation.validatePhoneNumber(PhoneNumber);
-            error = _validation.validateManditoryString(Subject);
-            error = _validation.validateManditoryString(Message);
+            checker = _validation.validateManditoryString(Name);
+            if(!checker.Equals(""))
+            {
+                error = error + checker +  " for name, ";
+            }
+            
+                checker = _validation.validateOptionalString(Company);
+            
+            
+            
+            if (!checker.Equals(""))
+            {
+                error = error + checker + " for Company, ";
+            }
 
-            if (error == "")
+
+            checker = _validation.validateManditoryString(EmailAddress);
+            if (!checker.Equals(""))
+            {
+                error = error + checker + " for email, ";
+            }
+
+            checker = _validation.validatePhoneNumber(PhoneNumber);
+            if (!checker.Equals(""))
+            {
+                error = error + checker + " for phone number, ";
+            }
+
+            checker = _validation.validateManditoryString(Subject);
+            if (!checker.Equals(""))
+            {
+                error = error + checker + " for subject, ";
+            }
+
+            checker = _validation.validateManditoryString(Message);
+            if (!checker.Equals(""))
+            {
+                error = error + checker + " for message, ";
+            }
+
+            if (error.Equals(""))
             {
                 Message toBeSaved = new Message() { Name = Name, Company = Company, Email = EmailAddress, PhoneNumber = PhoneNumber, Subject = Subject, UserMessage = Message };
 

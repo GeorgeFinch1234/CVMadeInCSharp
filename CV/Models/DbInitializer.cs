@@ -8,7 +8,7 @@
 
             
             context.Database.EnsureCreated();
-            Console.WriteLine("hit");
+            
             
         }
     }
