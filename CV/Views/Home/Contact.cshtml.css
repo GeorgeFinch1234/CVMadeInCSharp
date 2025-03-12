@@ -25,7 +25,21 @@ label{
 label, p{
     font-size:15px;
 }
-p{
-    margin:0px;
-    max-width:75vw;
+p {
+    margin: 0px;
+    max-width: 75vw;
+}
+#ErrorMessage{
+    display:block;
+    text-align:center;
+}
+@media screen and (min-width: 768px) {
+    label, input, p, textarea{
+        font-size:25px;
+    }
+    #submitBtn {
+        width: 200px;
+        height:50px;
+    }
+   
 }
