@@ -31,3 +31,27 @@ function showSlides() {
     
     setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
+
+
+/*
+education Scroll
+*/
+const options = {
+    threshold: 0.30
+}
+const Scroll = document.querySelectorAll(`.Scroll`);
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add(`ScrollIn`);
+        } else {
+            entry.target.classList.remove(`ScrollIn`);
+        }
+    })
+}, options);
+
+Scroll.forEach(Scroll => {
+    observer.observe(Scroll);
+});
+
