@@ -73,8 +73,40 @@ a{
         background-color: #4b7168;
     }
 
-    @media screen and (min-width: 768px){
-        #menuIcon{
+
+
+
+
+
+
+
+
+    /*
+        education scroll
+    */
+.Scroll {
+    position: relative;
+    opacity: 0;
+    transition: 2s;
+}
+
+.mainEducation > :nth-child(even){
+    left:20vw;
+}
+.mainEducation > :nth-child(odd) {
+    left: -20vw;
+}
+.mainEducation >.ScrollIn {
+    opacity: 1;
+    left: 0;
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    #menuIcon{
             display:none;
         }
         nav {
